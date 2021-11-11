@@ -15,7 +15,7 @@ public class WebCal extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
-     * @see HttpServlet#HttpServlet()
+     * @see HttpServlet#HttpServlet()0
      */
     public WebCal() {
         super();
@@ -28,12 +28,17 @@ public class WebCal extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=utf-8");
+		response.getWriter().append("<html><head><title>계산결과</title><style>body {text-align:center;}</style></head><body>");
+		
 		String x = request.getParameter("x");
 		String y = request.getParameter("y");
 		String op = request.getParameter("op");
 		
 		int t = Calculater.DoCal(x, y, op);
-		response.getWriter().append("입력한 값의 결과<br>" + x + " " + op + " " + y + " = " + t);
+		response.getWriter().append("<h3>입력한 값의 결과</h3>" + x + " " + op + " " + y + " = " + t);
+		response.getWriter().append("</body></html>");
 	}
 
 	/**
