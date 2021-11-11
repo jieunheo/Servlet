@@ -42,17 +42,21 @@ public class MyMul extends HttpServlet {
 		{
 			try {
 				int ix = Integer.parseInt(x);
-				
-				html.print("<h3>" + x + "단</h3>");
-				for (int i=1; i<=9; i++)
-				{
-					int z = ix * i;
-					html.print("<p>" + ix + " * " + i + " = " + z + "</p>");
+				if (ix > 9) {
+					html.print("<h2>구구단인데 9까지만 적어야지!!!</h2>");
+				} else {
+					html.print("<h3>" + x + "단</h3>");
+					for (int i=1; i<=9; i++)
+					{
+						int z = ix * i;
+						html.print("<p>" + ix + " * " + i + " = " + z + "</p>");
+					}	
 				}
 			} catch (NumberFormatException e) {
 				html.print("<h2>Oops!!</h2><h3>Not a Number</h3>");
 			}
 		}
+		html.println("<a href='http://localhost:8080/MyWeb/mul.html'>다시 검색</a>");
 		html.println("</body></html>");
 		html.close();
 		
