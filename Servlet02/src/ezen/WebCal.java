@@ -33,7 +33,7 @@ public class WebCal extends HttpServlet {
 		String op = request.getParameter("op");
 		
 		int t = Calculater.DoCal(x, y, op);
-		response.getWriter().append(x + " " + op + " " + y + " = " + t);
+		response.getWriter().append("입력한 값의 결과<br>" + x + " " + op + " " + y + " = " + t);
 	}
 
 	/**
