@@ -8,6 +8,11 @@ servlit 기초 공부
   cal.html - 계산기  
   MyCal.java - 계산기 기능  
   
+## Servlet02  
+  cal.html - 계산기 화면  
+  WebCal.java - 계산기 기능 불러와서 뿌리기  
+  Calculater.java - 계산기 기능  
+  
 ## MyServlet  
   mul.html - 구구단 몇 단 입력 받기
   MyMul - 몇 단 출력 기능
